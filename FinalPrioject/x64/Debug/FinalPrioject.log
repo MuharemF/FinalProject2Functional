@@ -1,0 +1,18 @@
+﻿  ALLCustomersData .cpp
+  Final.cpp
+  Generating Code...
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(13,1): error C2059: syntax error: '<<'
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(21,18): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(21,32): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(21,33): error C2059: syntax error: ')'
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(22,26): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(22,40): error C2059: syntax error: ';'
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(23,39): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(24,48): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(25,39): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(26,51): error C2065: 'i': undeclared identifier
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(29,1): error C2059: syntax error: '}'
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(29,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(33,17): error C2143: syntax error: missing ';' before '{'
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(33,17): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\ardia\Desktop\BackUp\FinalProject\FinalPrioject\Final.cpp(63,2): error C3861: 'mainMenu': identifier not found
