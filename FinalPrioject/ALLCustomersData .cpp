@@ -17,7 +17,7 @@ void customerData::read_all_data()
 
     string line;
     string name, accountNum, street, city, state, zip, phone;
-
+    readIn = 0;
     while (getline(fin, accountNum)) {
         set_accountNumber(accountNum);  // Set account number
 
@@ -35,10 +35,10 @@ void customerData::read_all_data()
         getline(fin, zip);
         getline(fin, phone);
         set_codeANDnumber(zip, phone);
-        readIn++;
+
         // Skip the empty line between customers
         getline(fin, line);
-
+        readIn++;
     }
 
     fin.close();
@@ -68,9 +68,3 @@ string customerData::get_codeANDnumber(int index)
     if (index < 0 || index >= zipCode.size()) return "";
     return "Zip Code: " + zipCode[index] + ", Phone: " + phoneNumber[index];
 }
-
-
-
-
-
-

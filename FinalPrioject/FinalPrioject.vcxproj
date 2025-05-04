@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ALLCustomersData .cpp" />
+    <ClCompile Include="ALLPurchasesData.cpp" />
     <ClCompile Include="Final.cpp" />
   </ItemGroup>
   <ItemGroup>

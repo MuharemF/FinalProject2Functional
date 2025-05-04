@@ -8,15 +8,10 @@ int readIn = 0;
 
 void printAll() {
 	customerData test;
-	int readIns = 0;
 	test.read_all_data();
-<<<<<<< Updated upstream
 
-=======
-	
 
-	//test comment for exiting out of the program but not pushing it 
->>>>>>> Stashed changes
+
 	//to increase this we have to make another loop that soly reads the file and counts the amount of items read
 	for (int i = 0; i < readIn; ++i) {
 		cout << "Customer " << i + 1 << ":\n";
@@ -24,6 +19,7 @@ void printAll() {
 		cout << "  Account: " << test.get_accountNum(i) << endl;
 		cout << "  Area: " << test.get_area(i) << endl;
 		cout << "  Contact: " << test.get_codeANDnumber(i) << endl << endl;
+
 	}
 
 }
@@ -34,7 +30,7 @@ void mainMenu() {
 	int choice;
 	cout << "Welcome to the spring 211 final project " << endl;
 	cout << "Choose what you want to do " << endl;
-	
+
 	do {
 		cout << "1. View all the customers we have " << endl;
 		cout << "2. Sort and print Customer list in descending or ascending order " << endl;
@@ -46,10 +42,10 @@ void mainMenu() {
 		cout << "8. Exit " << endl;
 		cin >> choice;
 		switch (choice) {
-		case 1: 
+		case 1:
 			printAll();
 			break;
-		
+
 
 		}
 

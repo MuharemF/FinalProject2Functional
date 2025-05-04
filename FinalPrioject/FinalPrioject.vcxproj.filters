@@ -21,6 +21,9 @@
     <ClCompile Include="ALLCustomersData .cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ALLPurchasesData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ALLPurchasesData.h">

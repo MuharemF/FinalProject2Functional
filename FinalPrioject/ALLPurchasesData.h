@@ -15,8 +15,12 @@ private:
 
 
 public:
+	void readInFile();
 	//Getters
-
+	string get_accountNum();
+	string get_item();
+	string get_data();
+	int get_amount();
 
 
 	//setters
@@ -30,4 +34,3 @@ public:
 
 
 #endif
-
