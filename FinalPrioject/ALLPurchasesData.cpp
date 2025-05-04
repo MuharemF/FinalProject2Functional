@@ -36,4 +36,4 @@ int purchasesData::get_amount()
 
 
 	return 0;
-}s
+}
