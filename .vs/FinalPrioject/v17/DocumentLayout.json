@@ -7,8 +7,23 @@
       "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\Final.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\CSC211\\Midterm_Project\\Midterm_Project.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\PurchasesData.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FinalPrioject\\PurchasesData.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLPurchasesData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLPurchasesData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLCustomersData .h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLCustomersData .h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\CustomerData.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -17,18 +32,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLCustomersData .cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLCustomersData .cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLCustomersData .h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLCustomersData .h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLPurchasesData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A64278B6-311A-4BAE-BBA0-1BF68521861F}|FinalPrioject\\FinalPrioject.vcxproj|solutionrelative:FinalPrioject\\ALLPurchasesData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +41,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,6 +50,17 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Midterm_Project.cpp",
+              "DocumentMoniker": "E:\\CSC211\\Midterm_Project\\Midterm_Project.cpp",
+              "ToolTip": "E:\\CSC211\\Midterm_Project\\Midterm_Project.cpp",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-05T21:12:01.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PurchasesData.txt",
               "DocumentMoniker": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\PurchasesData.txt",
               "RelativeDocumentMoniker": "FinalPrioject\\PurchasesData.txt",
@@ -59,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CustomerData.txt",
               "DocumentMoniker": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\CustomerData.txt",
               "RelativeDocumentMoniker": "FinalPrioject\\CustomerData.txt",
@@ -67,12 +81,11 @@
               "RelativeToolTip": "FinalPrioject\\CustomerData.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-04T05:17:17.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T05:17:17.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ALLCustomersData .cpp",
               "DocumentMoniker": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLCustomersData .cpp",
               "RelativeDocumentMoniker": "FinalPrioject\\ALLCustomersData .cpp",
@@ -80,12 +93,11 @@
               "RelativeToolTip": "FinalPrioject\\ALLCustomersData .cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-04T05:17:07.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T05:17:07.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ALLCustomersData .h",
               "DocumentMoniker": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLCustomersData .h",
               "RelativeDocumentMoniker": "FinalPrioject\\ALLCustomersData .h",
@@ -98,20 +110,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ALLPurchasesData.cpp",
               "DocumentMoniker": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.cpp",
               "RelativeDocumentMoniker": "FinalPrioject\\ALLPurchasesData.cpp",
               "ToolTip": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.cpp",
               "RelativeToolTip": "FinalPrioject\\ALLPurchasesData.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAtwBQAAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBQAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T05:17:09.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ALLPurchasesData.h",
               "DocumentMoniker": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\ALLPurchasesData.h",
               "RelativeDocumentMoniker": "FinalPrioject\\ALLPurchasesData.h",
@@ -130,7 +142,7 @@
               "RelativeDocumentMoniker": "FinalPrioject\\Final.cpp",
               "ToolTip": "C:\\Users\\ardia\\Desktop\\BackUp\\FinalProject2Functional\\FinalPrioject\\Final.cpp",
               "RelativeToolTip": "FinalPrioject\\Final.cpp",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAtwA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswDIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T05:17:10.781Z",
               "EditorCaption": ""

@@ -5,11 +5,13 @@
 #include <fstream>
 using namespace std;
 int readIn = 0;
+customerData test;
+purchasesData test2;
 double readInPurchase = 0;
 void printAll() {
-	customerData test;
+	
 	test.read_all_data();
-	purchasesData test2;
+	
 	test2.readInFile();
 	double totalCost = 0;
 
@@ -39,12 +41,51 @@ void printAll() {
 		cout << "------------------------------------------------------" << endl;
 
 	}
+}
+void printSpecficCustomer() {
+	test.read_all_data();
+	test2.readInFile();
+	int choice;
+	do {
+		cout << "There are a total of " << readIn << " customers which one whould you like to see? (type -1 to exit) ";
+		cin >> choice;
+		cout << "----------------------------------------------------------" << endl;
+		if (choice == -1) {
+			break;
+		}
+		if (cin.fail()||choice>=readIn||choice<=0) {
+			cin.clear();
+			cin.ignore(numeric_limits<int>::max(), '\n'); // Clear input buffer
+			cout << "Invalid input. \n";
+			continue;
+		}
+
+		cout << "Now viewing the data of Customer " << choice << endl;
+		cout << "	Name: " << test.get_name(choice-1) << endl;
+		cout << "	Account: " << test.get_accountNum(choice - 1) << endl;
+		cout << "	Area: " << test.get_area(choice - 1) << endl;
+		cout << "	Contact: " << test.get_codeANDnumber(choice - 1) << endl;
+		for (int i = 0;i < readInPurchase;i++) {
+			if (test2.get_accountNum(i) == test.get_accountNum(choice - 1)) {
+				cout << "	Item purchased: " << test2.get_item(i) << endl;
+				cout << "	Date: " << test2.get_date(i) << endl;
+				cout << "	Price of the item: " << test2.get_item(i) << " is: " << test2.get_itemPrice(i) << endl;
+			}
+			
+		}
+		cout << "----------------------------------------------------------" << endl;
+
+	} while (choice != -1);
 
 	
 
 
-}
 
+
+
+
+
+}
 
 
 void mainMenu() {
@@ -53,6 +94,7 @@ void mainMenu() {
 	cout << "Choose what you want to do " << endl;
 
 	do {
+	
 		cout << "1. View all the customers we have " << endl;
 		cout << "2. Sort and print Customer list in descending or ascending order " << endl;
 		cout << "3. View specific customer's account information along with all purchases ";
@@ -62,9 +104,23 @@ void mainMenu() {
 		cout << "7. Add new customer purchases " << endl;
 		cout << "8. Exit " << endl;
 		cin >> choice;
+		if (choice == 8) {
+			cout << "Exiting program . . ." << endl;
+			break;
+		}
+		if (cin.fail() || choice >= 8 || choice <= 0) {
+			cin.clear();
+			cin.ignore(numeric_limits<int>::max(), '\n'); // Clear input buffer
+			cout << "Invalid input. \n";
+			continue;
+		}
+		
 		switch (choice) {
 		case 1:
 			printAll();
+			break;
+		case 3:
+			printSpecficCustomer();
 			break;
 
 
@@ -78,7 +134,7 @@ void mainMenu() {
 
 int main() {
 	mainMenu();
-
+	/*printSpecficCustomer();*/
 
 
 	return 0;
