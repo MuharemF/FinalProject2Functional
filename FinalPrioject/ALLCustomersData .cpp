@@ -15,10 +15,13 @@ void customerData::read_all_data()
         return;
     }
 
-    string line;
+ 
     string name, accountNum, street, city, state, zip, phone;
     readIn = 0;
     while (getline(fin, accountNum)) {
+        if (accountNum.empty()) {
+            continue;
+        }
         set_accountNumber(accountNum);  // Set account number
 
         // Read name (first and last)
@@ -36,8 +39,7 @@ void customerData::read_all_data()
         getline(fin, phone);
         set_codeANDnumber(zip, phone);
 
-        // Skip the empty line between customers
-        getline(fin, line);
+       
         readIn++;
     }
 
