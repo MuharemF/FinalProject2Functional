@@ -43,36 +43,55 @@ void printAll() {
 	}
 }
 void printSpecficCustomer() {
+	readInPurchase = 0;
 	test.read_all_data();
 	test2.readInFile();
 	int choice;
+	int purchaseCount = 0;
+	double totalCost = 0;
 	do {
-		cout << "There are a total of " << readIn << " customers which one whould you like to see? (type -1 to exit) ";
+		cout << "There are a total of " << readIn << " customers which one whould you like to see? (type -1 to exit) " << endl;
+		for (int i = 0;i < readIn;i++) {
+			cout << i + 1 << ". "  << test.get_name(i) << endl;
+		}
 		cin >> choice;
 		cout << "----------------------------------------------------------" << endl;
 		if (choice == -1) {
 			break;
 		}
-		if (cin.fail()||choice>=readIn||choice<=0) {
+		if (cin.fail()||choice>readIn||choice<=0) {
 			cin.clear();
 			cin.ignore(numeric_limits<int>::max(), '\n'); // Clear input buffer
 			cout << "Invalid input. \n";
 			continue;
 		}
-
-		cout << "Now viewing the data of Customer " << choice << endl;
-		cout << "	Name: " << test.get_name(choice-1) << endl;
-		cout << "	Account: " << test.get_accountNum(choice - 1) << endl;
-		cout << "	Area: " << test.get_area(choice - 1) << endl;
-		cout << "	Contact: " << test.get_codeANDnumber(choice - 1) << endl;
+		for (int i = 0; i < readInPurchase; i++) {
+			if (test2.get_accountNum(i) == test.get_accountNum(choice-1)) {
+				purchaseCount++;
+			}
+		}
+		cout << "Now viewing the data of Customer " << choice << endl << endl;
+		cout << "	Name: " << test.get_name(choice-1) << endl << endl;
+		cout << "	Account: " << test.get_accountNum(choice - 1) << endl << endl;
+		cout << "	Area: " << test.get_area(choice - 1) << endl << endl;
+		cout << "	Contact: " << test.get_codeANDnumber(choice - 1) << endl << endl;
+		cout <<"	" << test.get_name(choice - 1) << " has a total of " << purchaseCount << " items purchased " << endl << endl;
+		int itemNum = 1;
 		for (int i = 0;i < readInPurchase;i++) {
 			if (test2.get_accountNum(i) == test.get_accountNum(choice - 1)) {
-				cout << "	Item purchased: " << test2.get_item(i) << endl;
-				cout << "	Date: " << test2.get_date(i) << endl;
-				cout << "	Price of the item: " << test2.get_item(i) << " is: " << test2.get_itemPrice(i) << endl;
+				cout << "	Item " << itemNum << " that was purchased: " << test2.get_item(i) << endl << endl;
+				cout << "	Date: " << test2.get_date(i) << endl << endl;
+				cout << "	Price of the item: " << test2.get_item(i) << " is: " << test2.get_itemPrice(i) << endl << endl;
+				totalCost += test2.get_itemPrice(i);
+				itemNum++;
 			}
 			
 		}
+		
+		cout << "	The total cost that " << test.get_name(choice - 1) << " spent is " << totalCost << endl;
+		totalCost = 0;
+		purchaseCount = 0;
+		itemNum = 1;
 		cout << "----------------------------------------------------------" << endl;
 
 	} while (choice != -1);
