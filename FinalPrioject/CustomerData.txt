@@ -1,4 +1,4 @@
-1234567
+1234
 Muharem Ficic
 Staten Island
 New York
@@ -6,7 +6,7 @@ New York
 10301
 917-940-1488
 
-98765432
+9876
 Some Guy
 Manhatten
 Jersey

@@ -17,6 +17,8 @@ private:
 
 public:
 	void readInFile();
+	void readOutFile();
+	void thingsSold(int numOftimes);
 	//Getters
 	string get_accountNum(int index);
 	string get_item(int index);

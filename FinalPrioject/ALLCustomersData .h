@@ -27,6 +27,7 @@ public:
 	string get_codeANDnumber(int index);
 	string get_accountNum(int index);
 	void read_all_data();
+	void readCustomOutData();
 
 
 	//setters

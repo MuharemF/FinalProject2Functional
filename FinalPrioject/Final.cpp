@@ -3,6 +3,7 @@
 #include "ALLPurchasesData.h"
 #include <string>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 int readIn = 0;
 customerData test;
@@ -105,10 +106,141 @@ void printSpecficCustomer() {
 
 
 }
+void printOutData() {
+	test2.readOutFile();
+	test.readCustomOutData();
+	double totalCost = 0;
+
+
+	//displays the amount of customers name account etc
+	for (int i = 0; i < readIn; i++) {
+		cout << "Customer " << i + 1 << ":\n";
+		cout << "	Name: " << test.get_name(i) << endl;
+		cout << "	Account: " << test.get_accountNum(i) << endl;
+		cout << "	Area: " << test.get_area(i) << endl;
+		cout << "	Contact: " << test.get_codeANDnumber(i) << endl;
+		//This loop is just for reading in the data from the purchasesData.txt file and just add the data to the customer
+		for (int j = 0; j < readInPurchase; j++) {
+			//checking to see if account nums are the same for each other 
+			if (test2.get_accountNum(j) == test.get_accountNum(i)) {
+				cout << "	Item purchased: " << test2.get_item(j) << endl;
+				cout << "	Date: " << test2.get_date(j) << endl;
+				cout << "	Price of the item: " << test2.get_item(j) << " is: " << test2.get_itemPrice(j) << endl;
+				totalCost += test2.get_itemPrice(j);
+
+
+			}
+
+		}
+		cout << "	The toal cost for Customer " << i + 1 << " is: " << totalCost << endl;
+		totalCost = 0;
+		cout << "------------------------------------------------------" << endl;
+
+	}
+
+}
+void addNewCustomer(int choice) {
+	purchasesData amountItemBought;
+	ofstream purchasesOut("PurchasesDataOutPut.txt",ios::app);
+	if (!purchasesOut.is_open()) {
+		cerr << "Error: Unable to open file." << endl;
+		return;
+	}
+	ofstream customerOut("CustomerDataOutPut.txt", ios::app);
+	int numOfcustom, Idnum, zip, itemNum;
+	string name, state, city, street, phoneNum;
+
+	cout << "This is for customer " << choice;
+	//Ask for IDNUM
+	while (true) {
+		cout << " Enter a 4 digit long Id number " << endl;
+		cin >> Idnum;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		if (cin.fail() || to_string(Idnum).length() < 4 || to_string(Idnum).length() > 4) {
+			cin.clear(); // Clear input buffer
+			cout << "Invalid input. \n";
+			continue;
+		}
+		else {
+			break;
+		}
+	}
+	
+	purchasesOut << Idnum << endl;
+	customerOut << Idnum << endl;
+	cout << " what is name " << endl;
+
+	getline(cin, name);
+
+	cout << "what is state " << endl;
+	getline(cin, state);
+	
+	cout << "what is city " << endl;
+	getline(cin, city);
+	
+	cout << "What is street " << endl;
+	getline(cin, street);
+	while (true) {
+		cout << "What is the zip code (5 digits)" << endl;
+		cin >> zip;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		if (cin.fail() || to_string(zip).length() < 5|| to_string(zip).length() >5) {
+			cin.clear();
+			
+			cout << "Invalid input. \n";
+			continue;
+		}
+		else {
+			break;
+		}
+	}
+	while (true) {
+		cout << "What is phone number (10 digits): ";
+		getline(cin, phoneNum);
+
+		// Check if it's exactly 10 digits and all characters are digits
+		if (phoneNum.length() != 10 || !all_of(phoneNum.begin(), phoneNum.end(), ::isdigit)) {
+			cout << "Invalid input. Phone number must be exactly 10 digits.\n";
+			continue;
+		}
+
+
+		break;
+	}
+
+	while (true) {
+		cout << "How many items did " << name << " buy? ";
+		cin >> itemNum;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		if (cin.fail() || itemNum < 0) {
+			cin.clear();
+			
+			cout << "Invalid input. \n";
+			continue;
+		}
+		else {
+			break;
+		}
+	}
+	
+	amountItemBought.thingsSold(itemNum);
+	customerOut << name << endl << state << endl << city << endl << street << endl <<  zip <<endl << phoneNum << endl << endl;
+	cout << "-------------------------------------------------------------------------------------" << endl;
+	if (choice != 1) {
+		addNewCustomer(choice - 1);
+
+	}
+	else {
+		printOutData();
+	}
+	
+
+}
+
 
 
 void mainMenu() {
-	int choice;
+	int choice, amountOfCustomers;
 	cout << "Welcome to the spring 211 final project " << endl;
 	cout << "Choose what you want to do " << endl;
 
@@ -141,6 +273,22 @@ void mainMenu() {
 		case 3:
 			printSpecficCustomer();
 			break;
+		case 5:
+		
+			while(true) {
+				cout << "How many customers are you adding: ";
+				cin >> amountOfCustomers;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				if (cin.fail() || amountOfCustomers <= 0) {
+					cin.clear();
+					cout << "Invalid input. \n";
+					continue;
+				}
+				else { break; }
+			}
+			
+			addNewCustomer(amountOfCustomers);
+			
 
 
 		}
@@ -153,8 +301,8 @@ void mainMenu() {
 
 int main() {
 	mainMenu();
-	/*printSpecficCustomer();*/
-
+	
+	
 
 	return 0;
 

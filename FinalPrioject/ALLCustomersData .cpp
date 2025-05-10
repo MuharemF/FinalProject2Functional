@@ -46,6 +46,39 @@ void customerData::read_all_data()
     fin.close();
 }
 
+void customerData::readCustomOutData()
+{
+    ifstream fin("CustomerDataOutPut.txt");
+    string name, accountNum, street, city, state, zip, phone;
+    readIn = 0;
+    while (getline(fin, accountNum)) {
+        if (accountNum.empty()) {
+            continue;
+        }
+        set_accountNumber(accountNum);  // Set account number
+
+        // Read name (first and last)
+        getline(fin, name);
+        set_name(name);
+
+        // Read address details
+        getline(fin, street);
+        getline(fin, city);
+        getline(fin, state);
+        set_area(street, city, state);
+
+        // Read zip code and phone number
+        getline(fin, zip);
+        getline(fin, phone);
+        set_codeANDnumber(zip, phone);
+
+
+        readIn++;
+    }
+
+
+}
+
 string customerData::get_accountNum(int index)
 {
 
