@@ -160,13 +160,13 @@ void purchasesData::writeAllToFile() {
     outFile.close();
 }
 void purchasesData::writeToUpdateFile() {
-    ofstream outFile("PurchasesDataOutPut.txt");
+    ofstream outFile("PurchasesDataOutPut.txt", ios::app);
     if (!outFile.is_open()) {
         cerr << "Error opening file for writing.\n";
         return;
     }
 
-    for (size_t i = 0; i < accountNumber.size(); ++i) {
+    for (size_t i = 0; i < accountNumber.size(); i++) {
         outFile << accountNumber[i] << endl;
         outFile << item[i] << endl;
         outFile << date[i] << endl;
@@ -190,21 +190,31 @@ void purchasesData::deletePurchasesByAccountOutFile(string accountNumToDelete) {
     writeToUpdateFile();
 
 }
-void purchasesData::updateFile(int fieldChoice, int index, const string& userInput) {
+void purchasesData::updateFile(int fieldChoice, int index, const string userInput) {
     if (index < 0 || index >= accountNumber.size()) {
         cerr << "Invalid index.\n";
         return;
     }
-    string oldAcc = accountNumber[index];
+    string oldAccount = accountNumber[index];
+    string oldAccount2 = accountNumber[index + 3];
     switch (fieldChoice) {
-    case 1: { // Account Number change
-       
-
-        for (size_t i = 0; i < accountNumber.size(); ++i) {
-            if (accountNumber[i] == oldAcc) {
-                accountNumber[i] = userInput;
+        //FUCKING KILL ME 
+    case 1: { // Account Number change      
+        cout << "Type the persons number for conformation " << endl;
+        int choice;
+        cin >> choice;
+        if (choice == 1) {
+            for (size_t i = 0; i < accountNumber.size(); ++i) {
+                if (accountNumber[i] == oldAccount) {
+                    accountNumber[i] = userInput;
+                }
             }
         }
+        else {
+            accountNumber[index + 2] = userInput;
+            accountNumber[index + 3] = userInput;
+        }
+     
         break;
     }
 
@@ -227,24 +237,6 @@ void purchasesData::updateFile(int fieldChoice, int index, const string& userInp
     writeToUpdateFile(); // Save all changes
 }
 
-
-void purchasesData::writUpdatedInfoFile(int amountItemsBought) {
-    ofstream outFile("PurchasesDataOutPut.txt");
-    if (!outFile.is_open()) {
-        cerr << "Error opening file for writing.\n";
-        return;
-    }
-
-    for (size_t i = 0; i < accountNumber.size(); ++i) {
-        outFile << accountNumber[i] << endl;
-        outFile << item[i] << endl;
-        outFile << date[i] << endl;
-        outFile << priceOfItem[amountItemsBought] << endl << endl;
-    }
-
-    outFile.close();
-
-}
 
 void purchasesData::readOutFile() {
     ifstream fin("PurchasesDataOutPut.txt");

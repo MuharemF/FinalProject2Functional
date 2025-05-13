@@ -24,7 +24,7 @@ public:
 	void thingsSold(int numOftimes);
 	void deletePurchasesByAccount(string accountNumToDelete);
 	void writeAllToFile();
-	void updateFile(int fieldChoice, int index, const string& userInput);
+	void updateFile(int fieldChoice, int index, const string userInput);
 	void writeToUpdateFile();
 	void deletePurchasesByAccountOutFile(string accountNumToDelete);
 	void writUpdatedInfoFile(int amountItemsBought);

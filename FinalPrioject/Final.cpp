@@ -232,8 +232,7 @@ void printOutData() {
 		//This loop is just for reading in the data from the purchasesData.txt file and just add the data to the customer
 		for (int j = 0; j < readInPurchase; j++) {
 			//checking to see if account nums are the same for each other 
-			if (test2.get_accountNum(j) != test.get_accountNum(i)) {
-				test.get_accountNum(i) = test2.get_accountNum(j);
+			if (test2.get_accountNum(j) == test.get_accountNum(i)) {
 				cout << "	Item purchased: " << test2.get_item(j) << endl;
 				cout << "	Date: " << test2.get_date(j) << endl;
 				cout << "	Price of the item: " << test2.get_item(j) << " is: " << test2.get_itemPrice(j) << endl;
@@ -355,7 +354,6 @@ int selectCustomer() {
 
 	int choice;
 
-
 	while (true) {
 		cout << "There are a total of " << readIn << " customers. Which one would you like to select?\n";
 		for (int i = 0; i < readIn; i++) {
@@ -363,38 +361,39 @@ int selectCustomer() {
 		}
 		cout << readIn + 1 << ". Exit" << endl;
 		cin >> choice;
-		if (choice == readIn + 1) {
-			cout << "Returning to main menu . . . " << endl;
-			cout << "------------------------------------------------------" << endl;
-			return choice;
-		}
-		
-		if (cin.fail() || choice <= 0 || choice > readIn+1) {
+
+		if (cin.fail() || choice <= 0 || choice > readIn + 1) {
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cout << "Invalid input.\n";
 			continue;
 		}
+
+		if (choice == readIn + 1) {
+			cout << "Returning to main menu . . . " << endl;
+			cout << "------------------------------------------------------" << endl;
+			return -1;  // <-- sentinel value to signal exit
+		}
+
 		break;
-
 	}
-	
 
-	return choice - 1;
+	return choice - 1;  // 0-based index
 }
+
 
 void update() {
 	customerData test;
 	purchasesData test2;
 	test.read_all_data();
 	test2.readInFile();
-	int customerIndex = selectCustomer();
-	if (customerIndex == readIn + 1) {
-		return;
-	}
-	//currentAccount is used for when the user is not chaning the the ID number
-	string currentAccount = test.get_accountNum(customerIndex-1);
 
+	int customerIndex = selectCustomer();
+	if (customerIndex == -1) {
+		return; // Exit chosen
+	}
+
+	string currentAccount = test.get_accountNum(customerIndex); // 0-based index
 	int choice;
 
 	while (true) {
@@ -406,6 +405,7 @@ void update() {
 		cout << "5. Purchased Items\n";
 		cout << "Enter your choice: ";
 		cin >> choice;
+
 		if (cin.fail() || choice <= 0) {
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -414,7 +414,6 @@ void update() {
 		}
 		break;
 	}
-	
 
 	switch (choice) {
 	case 1: {
@@ -422,7 +421,7 @@ void update() {
 		while (true) {
 			cout << "Enter the new 4-digit account number: ";
 			cin >> newAccountNum;
-			
+
 			if (cin.fail() || to_string(newAccountNum).length() != 4) {
 				cin.clear();
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -431,41 +430,41 @@ void update() {
 			}
 			break;
 		}
-		test.updateFile(choice, customerIndex, to_string(newAccountNum));
-		test2.updateFile(choice, customerIndex, to_string(newAccountNum));
+
+		string newAccountStr = to_string(newAccountNum);
+		test.updateFile(choice, customerIndex, newAccountStr);
+		test2.updateFile(choice, customerIndex, newAccountStr);
 		break;
 	}
+
 	case 2:
 	case 3:
 	case 4:
-
-		test.updateFile(choice, customerIndex, currentAccount);
-		test2.updateFile(choice, customerIndex, currentAccount);
-		break;
 	case 5:
 		test.updateFile(choice, customerIndex, currentAccount);
 		test2.updateFile(choice, customerIndex, currentAccount);
 		break;
+
 	default:
 		cout << "Invalid choice.\n";
 	}
-	
+
 	test.readCustomOutData();
 	test2.readOutFile();
+
 	system("Pause");
+
 	int purchaseCount = 0;
-	double totalCost = 0;
 	for (int i = 0; i < readInPurchase; i++) {
-		if (test2.get_accountNum(i) == test.get_accountNum(choice - 1)) {
+		if (test2.get_accountNum(i) == test.get_accountNum(customerIndex)) {
 			purchaseCount++;
 		}
 	}
-	cout << "The customer has been updated " << endl;
-	cout << "---------------------------------------------------------" << endl;
 
-
-
+	cout << "The customer has been updated.\n";
+	cout << "---------------------------------------------------------\n";
 }
+
 void deleteOgFile() {
 	customerData test;
 	purchasesData test2;
