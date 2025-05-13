@@ -1,3 +1,4 @@
-﻿  Final.cpp
-C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\FinalPrioject\Final.cpp(150,6): warning C4101: 'numOfcustom': unreferenced local variable
+﻿  ALLCustomersData .cpp
+  ALLPurchasesData.cpp
+  Generating Code...
   FinalPrioject.vcxproj -> C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\x64\Debug\FinalPrioject.exe

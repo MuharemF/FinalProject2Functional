@@ -15,19 +15,27 @@ private:
 	vector<string> state;
 	vector<string> zipCode;
 	vector<string> phoneNumber;
+	vector<string> customers;
 
 
 
 
 public:
+	//logic
+	void read_all_data();
+	void readCustomOutData();
+	void deleteCustomerByAccount(string accountNumToDelete);
+	void writeToInFile();
+	void updateFile(int fieldChoice, int userIndex, const string& userInput);
+	void writeToUpdateFile();
+	void deleteCustomerByAccountOutFile(string accountNumToDelete);
 
 	//Getters
 	string get_name(int index);
 	string get_area(int index);
 	string get_codeANDnumber(int index);
 	string get_accountNum(int index);
-	void read_all_data();
-	void readCustomOutData();
+	
 
 
 	//setters

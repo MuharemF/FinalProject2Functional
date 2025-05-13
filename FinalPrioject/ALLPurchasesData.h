@@ -13,12 +13,22 @@ private:
 	vector<string> date;
 	vector<double> priceOfItem;
 	vector<double> totalCost;
+	vector<string> holdData;
+	vector<int> holdIntData;
 
 
 public:
+	//logic
 	void readInFile();
 	void readOutFile();
 	void thingsSold(int numOftimes);
+	void deletePurchasesByAccount(string accountNumToDelete);
+	void writeAllToFile();
+	void updateFile(int fieldChoice, int index, const string& userInput);
+	void writeToUpdateFile();
+	void deletePurchasesByAccountOutFile(string accountNumToDelete);
+	void writUpdatedInfoFile(int amountItemsBought);
+	void thingsSoldForUpdate(int numOftimes, const string& accountNum);
 	//Getters
 	string get_accountNum(int index);
 	string get_item(int index);
