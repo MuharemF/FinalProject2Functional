@@ -101,6 +101,7 @@ void customerData::writeToInFile() {
 
     outFile.close();
 }
+//used to delete from the orignal 
 void customerData::deleteCustomerByAccount(string accountNumToDelete) {
     for (int i = 0; i < accountNumber.size();) {
         if (accountNumber[i] == accountNumToDelete) {
@@ -119,7 +120,7 @@ void customerData::deleteCustomerByAccount(string accountNumToDelete) {
     writeToInFile();
 
 }
-
+//used to delete from the output file 
 void customerData::deleteCustomerByAccountOutFile(string accountNumToDelete) {
     for (int i = 0; i < accountNumber.size();) {
         if (accountNumber[i] == accountNumToDelete) {
@@ -138,6 +139,7 @@ void customerData::deleteCustomerByAccountOutFile(string accountNumToDelete) {
     writeToUpdateFile();
 
 }
+//when adding or updating this is called 
 void customerData::writeToUpdateFile()
 {
 
@@ -159,7 +161,7 @@ void customerData::writeToUpdateFile()
 
     outFile.close();
 }
-
+//to update a customer 
 void customerData::updateFile(int fieldChoice, int index, const string& userInput)
 {
 

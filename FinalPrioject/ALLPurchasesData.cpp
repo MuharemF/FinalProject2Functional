@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+//just to read in the base txt file
 void purchasesData::readInFile() {
     ifstream fin("PurchasesData.txt");
     if (!fin.is_open()) {
@@ -39,6 +40,7 @@ void purchasesData::readInFile() {
     fin.close();
 }
 
+//when adding a new customer 
 void purchasesData::thingsSold(int numOftimes) {
     ofstream purchasesOut("PurchasesDataOutPut.txt", ios::app);
     if (!purchasesOut.is_open()) {
@@ -88,6 +90,7 @@ void purchasesData::thingsSold(int numOftimes) {
     readOutFile();
 
 }
+//when updating a customers purchase 
 void purchasesData::thingsSoldForUpdate(int numOftimes, const string& accountNum) {
     ofstream purchasesOut("PurchasesDataOutPut.txt", ios::app);
     if (!purchasesOut.is_open()) {
@@ -125,7 +128,7 @@ void purchasesData::thingsSoldForUpdate(int numOftimes, const string& accountNum
     readOutFile(); // Reload into memory
 }
 
-
+//delete function 
 void purchasesData::deletePurchasesByAccount(string accountNumToDelete) {
     for (size_t i = 0; i < accountNumber.size();) {
         if (accountNumber[i] == accountNumToDelete) {
@@ -142,7 +145,7 @@ void purchasesData::deletePurchasesByAccount(string accountNumToDelete) {
   
 }
 
-
+//write to the orginal file used for the delete function
 void purchasesData::writeAllToFile() {
     ofstream outFile("PurchasesData.txt");
     if (!outFile.is_open()) {
@@ -159,6 +162,7 @@ void purchasesData::writeAllToFile() {
 
     outFile.close();
 }
+//to write any updates to the new file 
 void purchasesData::writeToUpdateFile() {
     ofstream outFile("PurchasesDataOutPut.txt", ios::app);
     if (!outFile.is_open()) {
@@ -175,6 +179,7 @@ void purchasesData::writeToUpdateFile() {
 
     outFile.close();
 }
+//delete from the output file
 void purchasesData::deletePurchasesByAccountOutFile(string accountNumToDelete) {
     for (size_t i = 0; i < accountNumber.size();) {
         if (accountNumber[i] == accountNumToDelete) {
@@ -190,6 +195,7 @@ void purchasesData::deletePurchasesByAccountOutFile(string accountNumToDelete) {
     writeToUpdateFile();
 
 }
+
 void purchasesData::updateFile(int fieldChoice, int index, const string userInput) {
     if (index < 0 || index >= accountNumber.size()) {
         cerr << "Invalid index.\n";
@@ -290,6 +296,7 @@ void purchasesData::readOutFile() {
 
     fin.close();
 }
+//actually print out each thing indivualy 
 string purchasesData::get_accountNum(int index)
 {
     if (index < 0 || index >= accountNumber.size()) return "";

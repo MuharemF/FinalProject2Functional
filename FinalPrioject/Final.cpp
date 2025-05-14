@@ -249,6 +249,7 @@ void printOutData() {
 	}
 
 }
+//desgined for adding new customers
 void addNewCustomer(int choice) {
 	purchasesData amountItemBought;
 	ofstream purchasesOut("PurchasesDataOutPut.txt",ios::app);
@@ -563,6 +564,7 @@ void deleteOutfile() {
 
 
 }
+//choosing between which one to delete from 
 void deleteFunction() {
 	int choice;
 	while (true) {
@@ -911,7 +913,7 @@ void sortFunction() {
 
 
 
-
+//function that actually calls to other functions 
 void mainMenu() {
 	int choice, amountOfCustomers;
 	cout << "Welcome to the spring 211 final project " << endl;
@@ -1018,9 +1020,11 @@ void mainMenu() {
 
 
 int main() {
+	//welcome Text
 	cout << "Welcome to the 211 spring 2025 final project " << endl;
 	cout << "note in the project when you see a long set of line like below that means that you are entering a new section of the program. " << endl;
 	cout << "------------------------------------------------------" << endl;
+	system("Pause");
 	mainMenu();
 	
 
