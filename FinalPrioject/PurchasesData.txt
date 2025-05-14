@@ -10,10 +10,9 @@ Rectangle
 12000
 
 9876
-Another Thingy
+Square
 1/5/27
-37.95
-Another Thingy2
+$690.420
+Circle
 11/15/15
-70.65
-
+$360

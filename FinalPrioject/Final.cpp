@@ -380,91 +380,6 @@ int selectCustomer() {
 
 	return choice - 1;  // 0-based index
 }
-
-
-void update() {
-	customerData test;
-	purchasesData test2;
-	test.read_all_data();
-	test2.readInFile();
-
-	int customerIndex = selectCustomer();
-	if (customerIndex == -1) {
-		return; // Exit chosen
-	}
-
-	string currentAccount = test.get_accountNum(customerIndex); // 0-based index
-	int choice;
-
-	while (true) {
-		cout << "\nWhat would you like to update for this customer?\n";
-		cout << "1. Account Number\n";
-		cout << "2. Name\n";
-		cout << "3. Address (street, city, state, ZIP)\n";
-		cout << "4. Phone Number\n";
-		cout << "5. Purchased Items\n";
-		cout << "Enter your choice: ";
-		cin >> choice;
-
-		if (cin.fail() || choice <= 0) {
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "Invalid input.\n";
-			continue;
-		}
-		break;
-	}
-
-	switch (choice) {
-	case 1: {
-		int newAccountNum;
-		while (true) {
-			cout << "Enter the new 4-digit account number: ";
-			cin >> newAccountNum;
-
-			if (cin.fail() || to_string(newAccountNum).length() != 4) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Invalid input. Must be 4 digits.\n";
-				continue;
-			}
-			break;
-		}
-
-		string newAccountStr = to_string(newAccountNum);
-		test.updateFile(choice, customerIndex, newAccountStr);
-		test2.updateFile(choice, customerIndex, newAccountStr);
-		break;
-	}
-
-	case 2:
-	case 3:
-	case 4:
-	case 5:
-		test.updateFile(choice, customerIndex, currentAccount);
-		test2.updateFile(choice, customerIndex, currentAccount);
-		break;
-
-	default:
-		cout << "Invalid choice.\n";
-	}
-
-	test.readCustomOutData();
-	test2.readOutFile();
-
-	system("Pause");
-
-	int purchaseCount = 0;
-	for (int i = 0; i < readInPurchase; i++) {
-		if (test2.get_accountNum(i) == test.get_accountNum(customerIndex)) {
-			purchaseCount++;
-		}
-	}
-
-	cout << "The customer has been updated.\n";
-	cout << "---------------------------------------------------------\n";
-}
-
 void deleteOgFile() {
 	customerData test;
 	purchasesData test2;
@@ -506,6 +421,102 @@ void deleteOgFile() {
 
 
 }
+
+void update() {
+	customerData test;
+	purchasesData test2;
+	test.read_all_data();
+	test2.readInFile();
+
+	int customerIndex = selectCustomer();
+	if (customerIndex == -1) {
+		return; // Exit chosen
+	}
+
+	string currentAccount = test.get_accountNum(customerIndex); // 0-based index
+	int choice;
+
+	while (true) {
+		cout << "------------------------------------------------------" << endl;
+
+		cout << "\nWhat would you like to update for this customer?\n";
+		cout << "1. Account Number\n";
+		cout << "2. Name\n";
+		cout << "3. Address (street, city, state, ZIP)\n";
+		cout << "4. Phone Number\n";
+		cout << "5. Purchased Items\n";
+		cout << "Enter your choice: ";
+		cin >> choice;
+
+		if (cin.fail() || choice <= 0) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Invalid input.\n";
+			continue;
+		}
+		break;
+	}
+
+	switch (choice) {
+	case 1: {
+		int newAccountNum;
+		while (true) {
+			cout << "------------------------------------------------------" << endl;
+
+			cout << "Enter the new 4-digit account number: ";
+			cin >> newAccountNum;
+
+			if (cin.fail() || to_string(newAccountNum).length() != 4) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Invalid input. Must be 4 digits.\n";
+				continue;
+			}
+			break;
+		}
+
+		string newAccountStr = to_string(newAccountNum);
+		test.updateFile(choice, customerIndex, newAccountStr);
+		cout << "The customer you are updating is " << customerIndex + 1 << endl;
+		test2.updateFile(choice, customerIndex, newAccountStr);
+		cout << "------------------------------------------------------" << endl;
+
+		break;
+	}
+
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+		cout << "------------------------------------------------------" << endl;
+		test.updateFile(choice, customerIndex, currentAccount);
+		test2.updateFile(choice, customerIndex, currentAccount);
+		cout << "------------------------------------------------------" << endl;
+
+		break;
+
+	default:
+		cout << "Invalid choice.\n";
+	}
+
+	test.readCustomOutData();
+	test2.readOutFile();
+
+	system("Pause");
+
+	int purchaseCount = 0;
+	for (int i = 0; i < readInPurchase; i++) {
+		if (test2.get_accountNum(i) == test.get_accountNum(customerIndex)) {
+			purchaseCount++;
+		}
+	}
+	cout << "Now delete the customer you were updating which was  " << customerIndex+1 << endl;
+	deleteOgFile();
+	cout << "The customer has been updated.\n";
+	cout << "---------------------------------------------------------\n";
+}
+
+//dedicated to deleting the output file
 void deleteOutfile() {
 	customerData test;
 	purchasesData test2;
@@ -589,7 +600,7 @@ void deleteFunction() {
 
 }
 
-
+//Sorts in asscending order
 void sortCustomerASC() {
 	purchasesData data;
 	data.readInFile();
@@ -632,7 +643,7 @@ void sortCustomerASC() {
 	}
 	
 }
-
+//deseding order
 void sortCustomerDSC() {
 	customerData test;
 	test.read_all_data();
@@ -680,7 +691,7 @@ void sortCustomerDSC() {
 	}
 
 }
-
+//sorting the orginal file
 void sortOgFile() {
 	int choice;
 	do {
@@ -721,6 +732,7 @@ void sortOgFile() {
 	} while (choice != 3);
 	cout << "------------------------------------------------------" << endl;
 }
+//sorting the output file (ASSCENDING ORDER)
 void sortCustomerOutASC() {
 	purchasesData data;
 	data.readOutFile();
@@ -763,7 +775,7 @@ void sortCustomerOutASC() {
 	}
 
 }
-
+//sorting the output file (DESSECENDING ORDER)
 void sortCustomerOutDSC() {
 	customerData test;
 	test.readCustomOutData();
@@ -811,6 +823,7 @@ void sortCustomerOutDSC() {
 	}
 
 }
+//to call to the above sort functions
 void sortOutFile() {
 	int choice;
 	do {

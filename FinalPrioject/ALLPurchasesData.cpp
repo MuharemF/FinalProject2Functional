@@ -196,13 +196,22 @@ void purchasesData::updateFile(int fieldChoice, int index, const string userInpu
         return;
     }
     string oldAccount = accountNumber[index];
-    string oldAccount2 = accountNumber[index + 3];
     switch (fieldChoice) {
         //FUCKING KILL ME 
     case 1: { // Account Number change      
         cout << "Type the persons number for conformation " << endl;
         int choice;
-        cin >> choice;
+        while (true) {
+            cin >> choice;
+            if (cin.fail() || choice<=0) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid input. \n";
+                continue;
+            }
+            else { break; }
+        }
+      
         if (choice == 1) {
             for (size_t i = 0; i < accountNumber.size(); ++i) {
                 if (accountNumber[i] == oldAccount) {
@@ -211,8 +220,8 @@ void purchasesData::updateFile(int fieldChoice, int index, const string userInpu
             }
         }
         else {
-            accountNumber[index + 2] = userInput;
             accountNumber[index + 3] = userInput;
+            accountNumber[index + 4] = userInput;
         }
      
         break;
@@ -220,6 +229,7 @@ void purchasesData::updateFile(int fieldChoice, int index, const string userInpu
 
    
     case 5: {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         int amountItmesBought;
         cout << "How many items did they buy: ";
         cin >> amountItmesBought;

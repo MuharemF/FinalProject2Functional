@@ -197,6 +197,7 @@ void customerData::updateFile(int fieldChoice, int index, const string& userInpu
         zipCode[index] = zip;
         break;
     case 4:
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         while (true) {
             cout << "Enter new phone number: ";
 

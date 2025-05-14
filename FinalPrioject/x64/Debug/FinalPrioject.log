@@ -1,2 +1,7 @@
-﻿  ALLPurchasesData.cpp
+﻿  Final.cpp
+C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\FinalPrioject\Final.cpp(260,6): warning C4101: 'numOfcustom': unreferenced local variable
+C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\FinalPrioject\Final.cpp(613,23): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\FinalPrioject\Final.cpp(655,22): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\FinalPrioject\Final.cpp(745,22): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\FinalPrioject\Final.cpp(787,22): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
   FinalPrioject.vcxproj -> C:\Users\ardia\Desktop\BackUp\FinalProject2Functional\x64\Debug\FinalPrioject.exe
